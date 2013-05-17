@@ -37,6 +37,8 @@ We're not as huge as the Linux foundation, so again: *why git?*
   back into the parent. If it sucks - delete the branch and forget the whole
   embarrassing affair.
 
+  Branches are just collections of diffs associated with a GUID.
+
 3. You should be able to create the workflow you need.
 
   Git is really 152 (or so) separate commands under one convenient wrapper.
@@ -197,6 +199,7 @@ The branch command can do several things:
 - List branches: `git branch`
 - Create a new branch: `git branch branchname`
 - Delete a branch: `git branch -D branchname`
+- List only remote branches: `git branch -r`
 - List local and remote branches: `git branch -a`
 
 ## A neat trick with `checkout`
@@ -212,3 +215,13 @@ Create a branch and check it out at the same time:
     git merge gatlin/featureone
 
 The `-b` switch for `checkout` is pretty nifty.
+
+---
+
+# fetch
+
+We saw `fetch` earlier. `fetch` retrieves (or, in our colloquial parlance,
+*fetches*) the state of another repository but does not change the state of
+your local repository.
+
+There is more to say about fetch. I'll leave this for a later presentation.
