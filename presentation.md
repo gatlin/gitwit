@@ -76,6 +76,7 @@ have to rollback history, git will just apply the diffs until you arrive.
 
 # Common commands
 
+- `clone`
 - `add`
 - `commit
 - `checkout`
@@ -90,10 +91,33 @@ have to rollback history, git will just apply the diffs until you arrive.
 
 ---
 
+# clone
+
+As discussed, git is very anarchist. So if you want to grab someone's code out
+of a git repository, you're not "checking it out" or being granted access:
+you're cloning their entire history. Then you can start adding your own
+history in your own little parallel universe.
+
+Usage:
+
+    git clone https://somedomain/path/to/repo.git
+
+    git clone git://somedomain/path/to/repo.git
+
+    git clone git@somedomain:/path/to/repo.git
+
+---
+
 # add
 
 This stages a change to be committed. Anything you want to commit, `add`.
 Otherwise, don't.
+
+Usage:
+
+    git add somefile
+
+    git add ./*
 
 ---
 
@@ -102,6 +126,22 @@ Otherwise, don't.
 This actually commits the changes in your staging area to your local
 repository. In git, everything in a branch is just a collection of diffs; if
 you apply them in the correct order, you go back through time.
+
+## Message
+
+You have to include a commit message. You can do so with the `-m` switch.
+
+    git commit -m "Some commit message"
+
+If you don't, git will hassle you by running your default editor and make you
+type something and save it.
+
+## add and commit at once!
+
+If git is already tracking some files, then you can add and commit all changes
+with the `-a` flag:
+
+    git commit -a -m "my commit message"
 
 ---
 
@@ -130,6 +170,9 @@ Remote:
 
     git fetch remotename
     git checkout remotename/somebranch
+
+*We'll get to `fetch` in a moment.* The "Remote" commands essentially brings
+down server branches without modifying any of your local branches.
 
 ---
 
