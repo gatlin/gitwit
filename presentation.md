@@ -381,3 +381,34 @@ If you want to squash some together ...
     3 squash 81281e9 conflict resolution on merge
     4 squash ba68f7e explained branches; rebase
     5 squash ed9d72f branches has its own slide; stage and commit merged 
+
+---
+
+# Wait, so how do I actually revert a commit?
+
+---
+
+# revert
+
+Revert commits a new change which undoes the old change. So it adds to your
+history "hey, actually, I don't like this last change."
+
+    git revert HEAD~1
+
+This reverts the second to last commit (the `~` notation is very handy). So you
+don't need to know the commit GUID.
+
+---
+
+# reset
+
+This actually UNDOES HISTORY!
+
+![Change the timeline](http://www.ex-astris-scientia.org/scans/other/narada-dossier.jpg)
+
+---
+
+# reset for real
+
+Actually, I'm not going to tell you about this. Let's not irrevocably modify
+history, okay?
