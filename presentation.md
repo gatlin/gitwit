@@ -398,6 +398,9 @@ history "hey, actually, I don't like this last change."
 This reverts the second to last commit (the `~` notation is very handy). So you
 don't need to know the commit GUID.
 
+Use the `-n` flag to not automatically commit this. *See? The staging area is
+awesome.*
+
 ---
 
 # reset
