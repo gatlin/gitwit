@@ -374,4 +374,10 @@ Instead of 3, however many commits back you wish to squash. You'll see
     4 pick ba68f7e explained branches; rebase
     5 pick ed9d72f branches has its own slide; stage and commit merged 
 
+If you want to squash some together ...
 
+    1 pick 5e8f2d2 merge; polished fetch
+    2 squash 195181e pull command
+    3 squash 81281e9 conflict resolution on merge
+    4 squash ba68f7e explained branches; rebase
+    5 squash ed9d72f branches has its own slide; stage and commit merged 
