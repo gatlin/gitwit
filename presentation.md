@@ -201,6 +201,8 @@ The branch command can do several things:
 
 ## A neat trick with `checkout`
 
+Create a branch and check it out at the same time:
+
     !bash
     git checkout master
     git checkout -b gatlin/featureOne
@@ -208,3 +210,5 @@ The branch command can do several things:
     git commit -a -m "finished featureOne"
     git checkout master
     git merge gatlin/featureone
+
+The `-b` switch for `checkout` is pretty nifty.
