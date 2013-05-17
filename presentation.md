@@ -415,3 +415,7 @@ This actually UNDOES HISTORY!
 
 Actually, I'm not going to tell you about this. Let's not irrevocably modify
 history, okay?
+
+---
+
+# Other topics (GitHub vs Git, pull requests, etc)
