@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Don't be a gitwit</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="file:///Library/Python/2.7/site-packages/landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="file:///Library/Python/2.7/site-packages/landslide/themes/default/css/screen.css">
+    
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="file:///Library/Python/2.7/site-packages/landslide/themes/default/js/slides.js"></script>
+    
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Don't be a gitwit</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Why git?</h1></header>
+            
+            
+            <section><p><em>Wasn't this problem already solved?</em></p>
+<h2>The literal answer</h2>
+<p>Linus Torvalds needed something to manage the Linux kernel. The kernel is a
+massive project with thousands of contributors trying millions of experiments
+with a shifting hierarchy and a codebase so massive they couldn't keep it all
+managed on one central repository if they tried.</p>
+<p><img alt="Everything is terrible" src="file:///Users/gatlinjohnson/Projects/gitwit/./img/terrible.gif" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>A better answer</h1></header>
+            
+            
+            <section><p>We're not as huge as the Linux foundation, so again: <em>why git?</em></p>
+<ol>
+<li>Reality is an illusion</li>
+</ol>
+<p>Git operates on the assumption that you have multiple people working on
+  overlapping subsets of the same codebase and that, at any given moment,
+  no two people have compatible code.</p>
+<p>Hence, git is a <em>distributed version control system.</em> You have your own
+  repository and unless you say otherwise there is no such thing as the
+  "canonical" repository.</p>
+<ol>
+<li>Branching should be easy.</li>
+</ol>
+<p>Want to try something new? Just branch. If it works - <strong>great!</strong> Merge it
+  back into the parent. If it sucks - delete the branch and forget the whole
+  embarrassing affair.</p>
+<ol>
+<li>You should be able to create the workflow you need.</li>
+</ol>
+<p>Git is really 152 (or so) separate commands under one convenient wrapper.
+  You can compose them any way you want to. It's the Unix Philosophy for
+  version control.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>How does git work?</h1></header>
+            
+            
+            <section><p>Magic.</p>
+<p>Just kidding. Inside your git repository you'll find a hidden directory named
+<code>.git</code>. It contains a configuration file (remote repository locations, etc) and
+a bunch of diffs.</p>
+<p><em>That's it.</em></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Branches, tags, and commits</h1></header>
+            
+            
+            <section><p>A branch is just a textfile, somewhere inside <code>.git/</code> that contains a checksum
+of the latest commit. Conveniently, commits are stored at these checksums. So
+"switching to a branch" means "read a file, go to the set of diffs with this
+checksum, apply them."</p>
+<p><img alt="What your repo looks like" src="http://git-scm.com/figures/18333fig0301-tn.png" /></p>
+<p>Every point in your history can be "checked out" just like a branch because
+every commit you've ever made has a GUID. So you can totally
+<code>git checkout 97fb475982e6</code> or similar.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Staging and committing</h1></header>
+            
+            
+            <section><p>Unlike most version control systems, git has a <em>staging</em> area. You stage a
+change when you <code>git add</code> it.</p>
+<p><em>Protip: You can even stage portions of a file rather than the whole thing!</em></p>
+<p>When you actually <em>commit</em> changes, you are really taking a diff <strong>from</strong> your
+current version of the file <strong>to</strong> the old version of the file. If you ever
+have to rollback history, git will just apply the diffs until you arrive.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Down to business</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Common commands</h1></header>
+            
+            
+            <section><ul>
+<li><code>clone</code></li>
+<li><code>add</code></li>
+<li>`commit</li>
+<li><code>checkout</code></li>
+<li><code>branch</code></li>
+<li><code>fetch</code></li>
+<li><code>merge</code></li>
+<li><code>pull</code></li>
+<li><code>push</code></li>
+<li><code>log</code></li>
+<li><code>status</code></li>
+<li><code>rebase</code></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>clone</h1></header>
+            
+            
+            <section><p>As discussed, git is very anarchist. So if you want to grab someone's code out
+of a git repository, you're not "checking it out" or being granted access:
+you're cloning their entire history. Then you can start adding your own
+history in your own little parallel universe.</p>
+<p>Usage:</p>
+<pre><code>git clone https://somedomain/path/to/repo.git
+
+git clone git://somedomain/path/to/repo.git
+
+git clone git@somedomain:/path/to/repo.git
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>add</h1></header>
+            
+            
+            <section><p>This stages a change to be committed. Anything you want to commit, <code>add</code>.
+Otherwise, don't.</p>
+<p>Usage:</p>
+<pre><code>git add somefile
+
+git add ./*
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>commit</h1></header>
+            
+            
+            <section><p>This actually commits the changes in your staging area to your local
+repository. In git, everything in a branch is just a collection of diffs; if
+you apply them in the correct order, you go back through time.</p>
+<h2>Message</h2>
+<p>You have to include a commit message. You can do so with the <code>-m</code> switch.</p>
+<div class="highlight"><pre><span class="lineno">1</span> git commit -m <span class="s2">&quot;Some commit message&quot;</span>
+</pre></div>
+
+<p>If you don't, git will hassle you by running your default editor and make you
+type something and save it.</p>
+<h2>add and commit at once!</h2>
+<p>If git is already tracking some files, then you can add and commit all changes
+with the <code>-a</code> flag:</p>
+<div class="highlight"><pre><span class="lineno">1</span> git commit -a -m <span class="s2">&quot;my commit message&quot;</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Backdiff to the future!</h1></header>
+            
+            
+            <section><p><img alt="Back to the Future" src="file:///Users/gatlinjohnson/Projects/gitwit/./img/bttf.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>checkout</h1></header>
+            
+            
+            <section><p>In SVN, <code>checkout</code> means "checkout what's at the server and put it here in
+front of me."</p>
+<p>In git, it really means "switch to a different branch." The naming is perhaps
+unfortunate, but it does make sense: I want to check out this branch to see
+what is in it and make changes.</p>
+<p>You can checkout local and remote branches.</p>
+<p>Local:</p>
+<div class="highlight"><pre><span class="lineno">1</span> git checkout somelocalbranch
+</pre></div>
+
+<p>Remote:</p>
+<div class="highlight"><pre><span class="lineno">1</span> git fetch remotename
+<span class="lineno">2</span> git checkout remotename/somebranch
+</pre></div>
+
+<p><em>We'll get to <code>fetch</code> in a moment.</em> The "Remote" commands essentially brings
+down server branches without modifying any of your local branches.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>You know, I always see "checkout" ...</h1></header>
+            
+            
+            <section><p>... but never a <strong>checkin</strong> command. What's up with that, amirite?</p>
+<p><img alt="What's the deal?" src="file:///Users/gatlinjohnson/Projects/gitwit/./img/seinfeld.jpg" /></p>
+<p><em>I almost went with a Hotel California joke; regrets.</em></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>branch</h1></header>
+            
+            
+            <section><p>The branch command can do several things:</p>
+<ul>
+<li>List branches: <code>git branch</code></li>
+<li>Create a new branch: <code>git branch branchname</code></li>
+<li>Delete a branch: <code>git branch -D branchname</code></li>
+<li>List only remote branches: <code>git branch -r</code></li>
+<li>List local and remote branches: <code>git branch -a</code></li>
+</ul>
+<h2>A neat trick with <code>checkout</code></h2>
+<p>Create a branch and check it out at the same time:</p>
+<div class="highlight"><pre><span class="lineno">1</span> git checkout master
+<span class="lineno">2</span> git checkout -b gatlin/featureOne
+<span class="lineno">3</span> vim somefile.py
+<span class="lineno">4</span> git commit -a -m <span class="s2">&quot;finished featureOne&quot;</span>
+<span class="lineno">5</span> git checkout master
+<span class="lineno">6</span> git merge gatlin/featureone
+</pre></div>
+
+<p>The <code>-b</code> switch for <code>checkout</code> is pretty nifty.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>fetch</h1></header>
+            
+            
+            <section><p>We saw <code>fetch</code> earlier. <code>fetch</code> retrieves (or, in our colloquial parlance,
+<em>fetches</em>) the state of another repository but does not change the state of
+your local repository.</p>
+<p>There is more to say about fetch. I'll leave this for a later presentation.</p>
+<p>Usage:</p>
+<pre><code>git fetch remoteserver
+</code></pre>
+<p>This will look up the server you call "remoteserver" in your <code>.git/config</code> file
+and fetch its current state. Then I can access its branches like so:</p>
+<pre><code>git checkout remoteserver/branchname
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>merge</h1></header>
+            
+            
+            <section><p>To <code>merge</code> is to take the state of another branch and merge it with the state
+of the current branch.</p>
+<p>Usage:</p>
+<pre><code>git merge srcbranch
+</code></pre>
+<p>Think of it this way: wherever I am, if I want to bring in changes, I use
+<code>merge</code>.</p>
+<h2>Conflicts!</h2>
+<p>You will sometimes have conflicts. Git will fail loudly for you and tell you
+that you must resolve them.</p>
+<p><em>For this reason <code>merge</code> does not automatically commit anything unless you tell
+it to.</em></p>
+<p>To resolve conflicts:</p>
+<ol>
+<li>Go to the files git labeled as problematic</li>
+<li>Make the file look like what you want it to look like</li>
+<li><code>git add</code> and <code>git commit</code> those files.</li>
+</ol>
+<p>If you decide it's not worth it,</p>
+<pre><code>git merge --abort
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>pull</h1></header>
+            
+            
+            <section><p>Here is a common workflow:</p>
+<div class="highlight"><pre><span class="lineno">1</span> git fetch remoteserver
+<span class="lineno">2</span> git checkout myownbranch
+<span class="lineno">3</span> git merge remoteserver/branchname
+</pre></div>
+
+<p>It's so common that git has a special name for this combination: <strong>pull</strong>.</p>
+<p>Usage:</p>
+<pre><code>git pull remoteserver branchname
+</code></pre>
+<p>It's just fetch and merge.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>push</h1></header>
+            
+            
+            <section><p>So far all the commands have been "bring me something" types of commands. I
+merge from your branch into my branch; I fetch from your repository into my
+repository, etc.</p>
+<p>If you want a semi-centralized workflow, though (and we do), then git has a
+command for pushing your branch to a remote repository.</p>
+<p>Usage:</p>
+<pre><code>git push remoteserver localBranchName
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>log and status</h1></header>
+            
+            
+            <section><p>These are pretty simple. To see a history of your commits and commit messages:</p>
+<pre><code>git log
+</code></pre>
+<p>To see what is staged, unstaged, waiting to be commited, etc in your current
+working directory:</p>
+<pre><code>git status
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>rebase</h1></header>
+            
+            
+            <section><p>The dreaded rebase. <strong>EVERYBODY PANIC.</strong></p>
+<p>Actually, don't. It's not that bad. Rebase is like merge <em>except</em> instead of
+merging in the traditional sense, it</p>
+<ol>
+<li>
+<p>undoes everything you have committed to the point that you last rebased (or
+   branched)</p>
+</li>
+<li>
+<p>applies changes until your branch is where the server is</p>
+</li>
+<li>
+<p>applies your changes on top of this new foundation.</p>
+</li>
+</ol></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              21/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>When to use <code>rebase</code></h1></header>
+            
+            
+            <section><p>Rebase from some authoritative, more important branch down to lesser ones. So</p>
+<pre><code>git checkout gatlin/myfeature
+git rebase dev
+</code></pre>
+<p>Not the other way around.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Squashing commits</h1></header>
+            
+            
+            <section><p>You can "rebase" from an earlier point in history. And, with the <code>-i</code> flag you
+can interactively decide what to do at each stage and not just accept the
+default behavior.</p>
+<p>Go ahead and try this:</p>
+<pre><code>git rebase -i HEAD~3
+</code></pre>
+<p>Instead of 3, however many commits back you wish to squash. You'll see</p>
+<pre><code>1 pick 5e8f2d2 merge; polished fetch
+2 pick 195181e pull command
+3 pick 81281e9 conflict resolution on merge
+4 pick ba68f7e explained branches; rebase
+5 pick ed9d72f branches has its own slide; stage and commit merged
+</code></pre>
+<p>If you want to squash some together ...</p>
+<pre><code>1 pick 5e8f2d2 merge; polished fetch
+2 squash 195181e pull command
+3 squash 81281e9 conflict resolution on merge
+4 squash ba68f7e explained branches; rebase
+5 squash ed9d72f branches has its own slide; stage and commit merged
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              23/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Wait, so how do I actually revert a commit?</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              24/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>revert</h1></header>
+            
+            
+            <section><p>Revert commits a new change which undoes the old change. So it adds to your
+history "hey, actually, I don't like this last change."</p>
+<pre><code>git revert HEAD~1
+</code></pre>
+<p>This reverts the second to last commit (the <code>~</code> notation is very handy). So you
+don't need to know the commit GUID.</p>
+<p>Use the <code>-n</code> flag to not automatically commit this. <em>See? The staging area is
+awesome.</em></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              25/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>reset</h1></header>
+            
+            
+            <section><p>This actually UNDOES HISTORY!</p>
+<p><img alt="Change the timeline" src="file:///Users/gatlinjohnson/Projects/gitwit/./img/narada.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              26/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>reset for real</h1></header>
+            
+            
+            <section><p>Actually, I'm not going to tell you about this. Let's not irrevocably modify
+history, okay?</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              27/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Other topics (GitHub vs Git, pull requests, etc)</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              28/28
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Don't be a gitwit</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">Why git?</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">A better answer</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">How does git work?</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Branches, tags, and commits</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Staging and committing</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Down to business</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Common commands</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">clone</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">add</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">commit</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Backdiff to the future!</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">checkout</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">You know, I always see "checkout" ...</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">branch</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">fetch</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">merge</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">pull</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">push</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">log and status</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21">rebase</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22">When to use <code>rebase</code></a></th>
+        <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23">Squashing commits</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Wait, so how do I actually revert a commit?</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25">revert</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26">reset</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27">reset for real</a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28">Other topics (GitHub vs Git, pull requests, etc)</a></th>
+        <td><a href="#slide28">28</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>
