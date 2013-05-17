@@ -343,10 +343,9 @@ merging in the traditional sense, it
 
 3. applies your changes on top of this new foundation.
 
-So, your changes were initially based off some state of another branch. A
-`rebase` makes it so that your changes are based off a newer state.
+---
 
-## When to use `rebase`
+# When to use `rebase`
 
 Rebase from some authoritative, more important branch down to lesser ones. So
 
@@ -355,6 +354,24 @@ Rebase from some authoritative, more important branch down to lesser ones. So
 
 Not the other way around.
 
-## Squashing commits
+---
 
-You can "rebase" from an earlier point in history.
+# Squashing commits
+
+You can "rebase" from an earlier point in history. And, with the `-i` flag you
+can interactively decide what to do at each stage and not just accept the
+default behavior.
+
+Go ahead and try this:
+
+    git rebase -i HEAD~3
+
+Instead of 3, however many commits back you wish to squash. You'll see
+
+    1 pick 5e8f2d2 merge; polished fetch
+    2 pick 195181e pull command
+    3 pick 81281e9 conflict resolution on merge
+    4 pick ba68f7e explained branches; rebase
+    5 pick ed9d72f branches has its own slide; stage and commit merged 
+
+
