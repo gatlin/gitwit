@@ -418,6 +418,13 @@ history, okay?
 
 ---
 
+# Some useful workflows
+
+- [a popular one][gitflow]
+- [How GitHub does it][githubflow]
+
+---
+
 # Other topics (GitHub vs Git, pull requests, etc)
 
 ---
@@ -426,3 +433,6 @@ history, okay?
 
 - [The source for this presentation](https://github.com/gatlin/gitwit)
 - [The slideshow toolkit I used](https://github.com/adamzap/landslide)
+
+[gitflow]: http://nvie.com/posts/a-successful-git-branching-model/
+[githubflow]: http://scottchacon.com/2011/08/31/github-flow.html
