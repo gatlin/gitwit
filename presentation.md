@@ -407,7 +407,7 @@ awesome.*
 
 This actually UNDOES HISTORY!
 
-![Change the timeline](http://www.ex-astris-scientia.org/scans/other/narada-dossier.jpg)
+![Change the timeline](./img/narada.jpg)
 
 ---
 
