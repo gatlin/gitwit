@@ -419,3 +419,13 @@ history, okay?
 ---
 
 # Other topics (GitHub vs Git, pull requests, etc)
+<<<<<<< HEAD
+=======
+
+---
+
+# The end!
+
+- [The source for this presentation](https://github.com/gatlin/gitwit)
+- [The slideshow toolkit I used](https://github.com/adamzap/landslide)
+>>>>>>> master
