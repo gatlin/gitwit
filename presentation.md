@@ -225,3 +225,26 @@ We saw `fetch` earlier. `fetch` retrieves (or, in our colloquial parlance,
 your local repository.
 
 There is more to say about fetch. I'll leave this for a later presentation.
+
+Usage:
+
+    git fetch remoteserver
+
+This will look up the server you call "remoteserver" in your `.git/config` file
+and fetch its current state. Then I can access its branches like so:
+
+    git checkout remoteserver/branchname
+
+---
+
+# merge
+
+To `merge` is to take the state of another branch and merge it with the state
+of the current branch.
+
+Usage:
+
+    git merge srcbranch
+
+Think of it this way: wherever I am, if I want to bring in changes, I use
+`merge`.
