@@ -37,8 +37,6 @@ We're not as huge as the Linux foundation, so again: *why git?*
   back into the parent. If it sucks - delete the branch and forget the whole
   embarrassing affair.
 
-  Branches are just collections of diffs associated with a GUID.
-
 3. You should be able to create the workflow you need.
 
   Git is really 152 (or so) separate commands under one convenient wrapper.
@@ -55,7 +53,14 @@ Just kidding. Inside your git repository you'll find a hidden directory named
 `.git`. It contains a configuration file (remote repository locations, etc) and
 a bunch of diffs.
 
-*That's it.* However, some commands don't make sense without a 
+*That's it.*
+
+## Branches
+
+A branch is just a textfile, somewhere inside `.git/` that contains a checksum
+of the latest commit. Conveniently, commits are stored at these checksums. So
+"switching to a branch" means "read a file, go to the set of diffs with this
+checksum, apply them."
 
 ## Staging
 
@@ -300,3 +305,48 @@ command for pushing your branch to a remote repository.
 Usage:
 
     git push remoteserver localBranchName
+
+---
+
+# log and status
+
+These are pretty simple. To see a history of your commits and commit messages:
+
+    git log
+
+To see what is staged, unstaged, waiting to be commited, etc in your current
+working directory:
+
+    git status
+
+---
+
+# rebase
+
+The dreaded rebase. **EVERYBODY PANIC.**
+
+Actually, don't. It's not that bad. Rebase is like merge *except* instead of
+merging in the traditional sense, it
+
+1. undoes everything you have committed to the point that you last rebased (or
+   branched)
+
+2. applies changes until your branch is where the server is
+
+3. applies your changes on top of this new foundation.
+
+So, your changes were initially based off some state of another branch. A
+`rebase` makes it so that your changes are based off a newer state.
+
+## When to use `rebase`
+
+Rebase from some authoritative, more important branch down to lesser ones. So
+
+    git checkout gatlin/myfeature
+    git rebase dev
+
+Not the other way around.
+
+## Squashing commits
+
+You can "rebase" from an earlier point in history. 
