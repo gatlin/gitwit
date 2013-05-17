@@ -131,6 +131,7 @@ you apply them in the correct order, you go back through time.
 
 You have to include a commit message. You can do so with the `-m` switch.
 
+    !bash
     git commit -m "Some commit message"
 
 If you don't, git will hassle you by running your default editor and make you
@@ -141,6 +142,7 @@ type something and save it.
 If git is already tracking some files, then you can add and commit all changes
 with the `-a` flag:
 
+    !bash
     git commit -a -m "my commit message"
 
 ---
@@ -164,10 +166,12 @@ You can checkout local and remote branches.
 
 Local:
 
+    !bash
     git checkout somelocalbranch
 
 Remote:
 
+    !bash
     git fetch remotename
     git checkout remotename/somebranch
 
@@ -192,3 +196,15 @@ The branch command can do several things:
 
 - List branches: `git branch`
 - Create a new branch: `git branch branchname`
+- Delete a branch: `git branch -D branchname`
+- List local and remote branches: `git branch -a`
+
+## A neat trick with `checkout`
+
+    !bash
+    git checkout master
+    git checkout -b gatlin/featureOne
+    vim somefile.py
+    git commit -a -m "finished featureOne"
+    git checkout master
+    git merge gatlin/featureone
