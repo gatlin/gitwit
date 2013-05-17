@@ -248,3 +248,22 @@ Usage:
 
 Think of it this way: wherever I am, if I want to bring in changes, I use
 `merge`.
+
+---
+
+# pull
+
+Here is a common workflow:
+
+    !bash
+    git fetch remoteserver
+    git checkout myownbranch
+    git merge remoteserver/branchname
+
+It's so common that git has a special name for this combination: **pull**.
+
+Usage:
+
+    git pull remoteserver branchname
+
+It's just fetch and merge.
