@@ -55,21 +55,29 @@ a bunch of diffs.
 
 *That's it.*
 
-## Branches
+---
+
+# Branches, tags, and commits
 
 A branch is just a textfile, somewhere inside `.git/` that contains a checksum
 of the latest commit. Conveniently, commits are stored at these checksums. So
 "switching to a branch" means "read a file, go to the set of diffs with this
 checksum, apply them."
 
-## Staging
+![What your repo looks like](http://git-scm.com/figures/18333fig0301-tn.png)
+
+Every point in your history can be "checked out" just like a branch because
+every commit you've ever made has a GUID. So you can totally
+`git checkout 97fb475982e6` or similar.
+
+---
+
+# Staging and committing
 
 Unlike most version control systems, git has a *staging* area. You stage a
 change when you `git add` it.
 
 *Protip: You can even stage portions of a file rather than the whole thing!*
-
-## Committing
 
 When you actually *commit* changes, you are really taking a diff **from** your
 current version of the file **to** the old version of the file. If you ever
@@ -349,4 +357,4 @@ Not the other way around.
 
 ## Squashing commits
 
-You can "rebase" from an earlier point in history. 
+You can "rebase" from an earlier point in history.
