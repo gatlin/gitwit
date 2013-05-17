@@ -85,8 +85,8 @@ have to rollback history, git will just apply the diffs until you arrive.
 - `branch`
 - `fetch`
 - `merge`
-- `push`
 - `pull`
+- `push`
 - `log`
 - `status`
 - `rebase`
@@ -249,6 +249,24 @@ Usage:
 Think of it this way: wherever I am, if I want to bring in changes, I use
 `merge`.
 
+## Conflicts!
+
+You will sometimes have conflicts. Git will fail loudly for you and tell you
+that you must resolve them.
+
+*For this reason `merge` does not automatically commit anything unless you tell
+it to.*
+
+To resolve conflicts:
+
+1. Go to the files git labeled as problematic
+2. Make the file look like what you want it to look like
+3. `git add` and `git commit` those files.
+
+If you decide it's not worth it,
+
+    git merge --abort
+
 ---
 
 # pull
@@ -267,3 +285,18 @@ Usage:
     git pull remoteserver branchname
 
 It's just fetch and merge.
+
+---
+
+# push
+
+So far all the commands have been "bring me something" types of commands. I
+merge from your branch into my branch; I fetch from your repository into my
+repository, etc.
+
+If you want a semi-centralized workflow, though (and we do), then git has a
+command for pushing your branch to a remote repository.
+
+Usage:
+
+    git push remoteserver localBranchName
