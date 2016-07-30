@@ -255,9 +255,7 @@ and fetch its current state. Then I can access its branches like so:
 To `merge` is to take the state of another branch and merge it with the state
 of the current branch.
 
-Usage:
-
-    git merge srcbranch
+Usage: `git merge srcbranch`
 
 Think of it this way: wherever I am, if I want to bring in changes, I use
 `merge`.
@@ -276,9 +274,7 @@ To resolve conflicts:
 2. Make the file look like what you want it to look like
 3. `git add` and `git commit` those files.
 
-If you decide it's not worth it,
-
-    git merge --abort
+If you decide it's not worth it, then `git merge --abort`
 
 ---
 
