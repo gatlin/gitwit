@@ -367,6 +367,7 @@ blockquote {
   border-left: solid 8px #778;
   padding: .1ex 1ex;
   font-style: italic;
+  font-size: 20px;
 }
 
 li {
@@ -560,4 +561,8 @@ aside {
   height: 100%;
   z-index: 64;
   display: none;
+}
+
+.image-reference {
+  display: inline;
 }
