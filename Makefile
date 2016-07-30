@@ -10,3 +10,6 @@ build:
 
 show: build
 	open index.html
+
+clean:
+	@rm -f index.html
