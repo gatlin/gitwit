@@ -1,4 +1,4 @@
-all: build
+all: publish
 
 publish:
 	landslide presentation.md --relative --copy-theme
@@ -13,3 +13,4 @@ show: build
 
 clean:
 	@rm -f index.html
+	@rm -rf theme
